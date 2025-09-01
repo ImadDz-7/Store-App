@@ -10,8 +10,9 @@ class GetAllCategories {
       List<dynamic> data = jsonDecode(response.body);
 
       return data;
-    } else{
-      throw Exception('There is a problem with statusCode ${response.statusCode}');
+    } else {
+      throw Exception(
+          'There is a problem with statusCode ${response.statusCode}');
     }
   }
 }

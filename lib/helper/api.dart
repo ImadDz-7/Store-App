@@ -14,10 +14,11 @@ class Api {
     }
   }
 
-  Future<dynamic> post(
-      {required String url,
-      @required dynamic body,
-      @required String? token}) async {
+  Future<dynamic> post({
+    required String url,
+    @required dynamic body,
+    @required String? token,
+  }) async {
     Map<String, String> headers = {};
     if (token != null) {
       headers.addAll({'Authorization': 'Bearer $token'});

@@ -39,7 +39,6 @@ class Api {
     required String url,
     @required dynamic body,
     @required String? token,
-    required int id,
   }) async {
     Map<String, String> headers = {};
     headers.addAll({'Content-Type': 'application/x-www-form-urlencoded'});
@@ -47,7 +46,7 @@ class Api {
       headers.addAll({'Authorization': 'Bearer $token'});
     }
     http.Response response = await http.put(
-      Uri.parse('https://fakestoreapi.com/products/$id'),
+      Uri.parse(url),
       body: body,
       headers: headers,
     );

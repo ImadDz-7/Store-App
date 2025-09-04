@@ -1,7 +1,7 @@
 class ProductModel {
   final int id;
   final String title;
-  final double price;
+  final num price; // double
   final String description;
   final String category;
   final String image;
@@ -31,8 +31,8 @@ class ProductModel {
 }
 
 class RatingModel {
-  final double rate;
-  final int count;
+  final num rate; // double
+  final num count; // int
 
   RatingModel({
     required this.rate,

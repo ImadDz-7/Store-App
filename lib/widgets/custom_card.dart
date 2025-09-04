@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:store_app/models/product_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({
+  CustomCard({
+    required this.product,
     Key? key,
   }) : super(key: key);
+
+  ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,7 @@ class CustomCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Handbag LV',
+                    product.title.toString().substring(0, 6),
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 15,
@@ -40,7 +44,7 @@ class CustomCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        r'$225',
+                      '\$${product.price.toString()}',
                       ),
                       IconButton(
                         onPressed: () {},
@@ -58,10 +62,11 @@ class CustomCard extends StatelessWidget {
         ),
         Positioned(
           left: 60,
-          bottom: 80,
+          bottom: 65,
           child: Image.network(
-            'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png',
+            product.image,
             height: 90,
+            width: 90,
           ),
         ),
       ],

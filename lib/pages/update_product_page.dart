@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_text_field.dart';
 
 class UpdateProductPage extends StatelessWidget {
@@ -22,6 +23,7 @@ class UpdateProductPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
+            const SizedBox(height: 35),
             CustomTextField(hintText: 'Product Name'),
             const SizedBox(height: 15),
             CustomTextField(hintText: 'Price'),
@@ -29,7 +31,9 @@ class UpdateProductPage extends StatelessWidget {
             CustomTextField(hintText: 'Description'),
             const SizedBox(height: 15),
             CustomTextField(hintText: 'Image'),
-            const SizedBox(height: 15),
+            const SizedBox(height: 65),
+            CustomButton(text: 'Update'),
+
           ],
         ),
       ),

@@ -21,20 +21,22 @@ class UpdateProductPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          children: [
-            const SizedBox(height: 35),
-            CustomTextField(hintText: 'Product Name'),
-            const SizedBox(height: 15),
-            CustomTextField(hintText: 'Price'),
-            const SizedBox(height: 15),
-            CustomTextField(hintText: 'Description'),
-            const SizedBox(height: 15),
-            CustomTextField(hintText: 'Image'),
-            const SizedBox(height: 65),
-            CustomButton(text: 'Update'),
-
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 35),
+              CustomTextField(hintText: 'Product Name'),
+              const SizedBox(height: 15),
+              CustomTextField(hintText: 'Price'),
+              const SizedBox(height: 15),
+              CustomTextField(hintText: 'Description'),
+              const SizedBox(height: 15),
+              CustomTextField(hintText: 'Image'),
+              const SizedBox(height: 65),
+              CustomButton(text: 'Update'),
+        
+            ],
+          ),
         ),
       ),
     );

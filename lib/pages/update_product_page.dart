@@ -7,6 +7,13 @@ class UpdateProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Update Product', style: TextStyle(color: Colors.black),),
+        centerTitle: true,
+        elevation: 0, 
+        backgroundColor: Colors.transparent,
+      ),
+    );
   }
 }

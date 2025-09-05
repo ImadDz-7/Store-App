@@ -23,6 +23,13 @@ class UpdateProductPage extends StatelessWidget {
         child: Column(
           children: [
             CustomTextField(hintText: 'Product Name'),
+            const SizedBox(height: 15),
+            CustomTextField(hintText: 'Price'),
+            const SizedBox(height: 15),
+            CustomTextField(hintText: 'Description'),
+            const SizedBox(height: 15),
+            CustomTextField(hintText: 'Image'),
+            const SizedBox(height: 15),
           ],
         ),
       ),

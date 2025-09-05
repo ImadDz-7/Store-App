@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/widgets/custom_text_field.dart';
 
 class UpdateProductPage extends StatelessWidget {
   const UpdateProductPage({super.key});
@@ -9,10 +10,21 @@ class UpdateProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Update Product', style: TextStyle(color: Colors.black),),
+        title: const Text(
+          'Update Product',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
-        elevation: 0, 
+        elevation: 0,
         backgroundColor: Colors.transparent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          children: [
+            CustomTextField(hintText: 'Product Name'),
+          ],
+        ),
       ),
     );
   }

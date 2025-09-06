@@ -1,7 +1,7 @@
 class ProductModel {
   final int id;
   final String title;
-  final num price; // double
+  final dynamic price; // double
   final String description;
   final String category;
   final String image;
@@ -31,8 +31,8 @@ class ProductModel {
 }
 
 class RatingModel {
-  final num rate; // double
-  final num count; // int
+  final num? rate; // double
+  final num? count; // int
 
   RatingModel({
     required this.rate,
@@ -41,8 +41,8 @@ class RatingModel {
 
   factory RatingModel.fromJson(jsonData) {
     return RatingModel(
-      rate: jsonData['rate'],
-      count: jsonData['count'],
+      rate: jsonData?['rate'],
+      count: jsonData?['count'],
     );
   }
 }

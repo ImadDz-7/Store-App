@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:store_app/helper/helper.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/services/update_product_service.dart';
 import 'package:store_app/widgets/custom_button.dart';
@@ -75,11 +76,17 @@ class _UpdateProductPageState extends State<UpdateProductPage> {
                   onTap: () async {
                     isLoading = true;
                     setState(() {});
-                    await updateProduct(product);
+
                     try {
-                      
-                      print('success');
+                      await updateProduct(product);
+                      showSnackBar(
+                          context: context,
+                          message: 'Product Updated Successfully');
                     } catch (e) {
+                      showSnackBar(
+                          context: context,
+                          message:
+                              'Oops there was an error, please try again!');
                       print(e.toString());
                     }
                     isLoading = false;

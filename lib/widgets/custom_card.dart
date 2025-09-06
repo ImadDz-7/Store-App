@@ -39,7 +39,7 @@ class CustomCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      product.title.toString().substring(0, 6),
+                      product.title.toString().substring(0, 11),
                       style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 15,

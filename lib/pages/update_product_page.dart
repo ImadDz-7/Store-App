@@ -13,7 +13,8 @@ class UpdateProductPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ProductModel product = ModalRoute.of(context)!.settings.arguments as ProductModel;
+    ProductModel product =
+        ModalRoute.of(context)!.settings.arguments as ProductModel;
 
     return Scaffold(
       appBar: AppBar(
@@ -63,20 +64,29 @@ class UpdateProductPage extends StatelessWidget {
               CustomButton(
                 text: 'Update',
                 onTap: () {
-                  UpdateProductService().updateProduct(
-                    id: product.id,
-                    title: title!,
-                    price: price!,
-                    description: description!,
-                    image: image!,
-                    category: product.category,
-                  );
+                  try {
+                    updateProduct(product);
+                    print('success');
+                  } catch (e) {
+                    print(e.toString());
+                  }
                 },
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  void updateProduct(ProductModel product) {
+    UpdateProductService().updateProduct(
+      id: product.id,
+      title: title!,
+      price: price!,
+      description: description!,
+      image: image!,
+      category: product.category,
     );
   }
 }

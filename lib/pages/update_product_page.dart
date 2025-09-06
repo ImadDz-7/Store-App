@@ -3,7 +3,9 @@ import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_text_field.dart';
 
 class UpdateProductPage extends StatelessWidget {
-  const UpdateProductPage({super.key});
+  UpdateProductPage({super.key});
+
+  String? productName, price, description, image;
 
   static String id = 'UpdateProductPage';
 
@@ -25,16 +27,42 @@ class UpdateProductPage extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 35),
-              CustomTextField(hintText: 'Product Name'),
+              CustomTextField(
+                hintText: 'Product Name',
+                onChanged: (data) {
+                  productName = data;
+                },
+              ),
               const SizedBox(height: 15),
-              CustomTextField(hintText: 'Price'),
+              CustomTextField(
+                hintText: 'Price',
+                inputType: TextInputType.number,
+                onChanged: (data) {
+                  price = data;
+                },
+
+              ),
               const SizedBox(height: 15),
-              CustomTextField(hintText: 'Description'),
+              CustomTextField(
+                hintText: 'Description',
+                onChanged: (data) {
+                  description = data;
+                },
+              ),
               const SizedBox(height: 15),
-              CustomTextField(hintText: 'Image'),
+              CustomTextField(
+                hintText: 'Image',
+                onChanged: (data) {
+                  image = data;
+                },
+              ),
               const SizedBox(height: 65),
-              CustomButton(text: 'Update'),
-        
+              CustomButton(
+                text: 'Update',
+                onTap: () {
+                  
+                },
+              ),
             ],
           ),
         ),
